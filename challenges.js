@@ -34,9 +34,11 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
+function addOne(number){
+  return number + 1;
+}
 
-
-
+console.log(addOne(6))
 
 /*-----------------------------------------------------------------
 Challenge: 02-addTwoNumbers
