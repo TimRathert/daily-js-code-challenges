@@ -234,9 +234,10 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
-
-
-
+if(string.length>3){
+  return string.slice(1,string.length-1)
+	}
+else{return ''} 
 
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
