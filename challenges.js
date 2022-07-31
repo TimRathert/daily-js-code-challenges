@@ -17,6 +17,7 @@ function sayHello() {
   return 'Hello!'
 }
 
+sayHello()
 
 /*-----------------------------------------------------------------
 Challenge: 01-addOne
@@ -59,8 +60,8 @@ addTwoNumbers('Hello', 5) //=> NaN
 // Your solution for 02-addTwoNumbers here:
 
 function addTwoNumbers (num1, num2){
-  if (typeof num1 == "number" && typeof num2 == "number"){return num1 + num2}
- else {return "NaN"} 
+  if (typeof(num1) !== "number" || typeof(num2) !== "number"){return NaN}
+ else {return num1 + num2} 
  }
 
 /*-----------------------------------------------------------------
@@ -82,6 +83,17 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
+function sumNumbers(arr){
+  
+  //console.log(arr);
+  let sum = 0;
+ //loop
+ for (let i = 0; i < arr.length; i++){
+  //what to do with the loop
+  sum += arr[i];}
+    console.log(sum);
+    return sum;
+  }
 
 
 
@@ -105,7 +117,13 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
-
+function addList (){
+  let beans = 0;
+  for (let i=0; i < arguments.length; i++){
+   beans += arguments[i];
+    }
+  return beans;
+}
 
 
 
@@ -128,9 +146,22 @@ computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
-
-
-
+function computeRemainder(num1,num2){
+  if (num2 === 0){return Infinity}
+    else if(num2>num1){
+      return 'This answer less than 1, so the partial quotient is 0 and the remainder is ' + num1;
+    }
+    else{
+  let beans =  num1 / num2;
+  let rem = ((beans - Math.floor(beans))*num2);
+  //this is rounding my answers to avoid long, inaccurate decimals
+  return Math.round(rem*100000)/100000;
+      
+  //this is the undrounded output    
+  //return rem;
+    }
+  }
+ 
 
 
 /*-----------------------------------------------------------------
@@ -152,7 +183,18 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
+function range(num1, num2){
 
+  let arr = [];
+  
+	if(num2 < num1){return "First argument must be less than second"}
+  else {
+  	for (let i=num1; i<num2;i++){
+  		arr.push(i); 
+    		}
+    return arr
+    }
+  }
 
 
 
@@ -171,9 +213,9 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
-
-
-
+function reverseUpcaseString(string){
+  return string.split('').reverse().join('')
+}
 
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
@@ -809,5 +851,3 @@ totalTaskTime( [2, 2, 3, 3, 4, 4], 2 ) //=> 9
 totalTaskTime( [5, 2, 6, 8, 7, 2], 3 ) // => 12
 -----------------------------------------------------------------*/
 // Your solution for 30- here:
-
-
