@@ -259,6 +259,22 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 // Your solution for 09-charCount here:
 
 
+function charCount(str){
+  let letters = {}
+  for (let i = 0; i<str.length; i++){
+      if(letters[str[i]] === undefined){
+      letters[str[i]] = 1;
+    }
+    else{
+      letters[str[i]] += 1
+    }
+  }
+return letters;
+}
+
+charCount('hello')
+  
+  
 
 
 
