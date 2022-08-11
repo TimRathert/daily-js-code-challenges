@@ -301,6 +301,18 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 // Your solution for 10-formatWithPadding here:
 
 
+function formatWithPadding(str, q, total){
+  newArr = [];
+
+	for (let i = 0; i<str.toString().length;i++){  
+		newArr.push(str.toString()[i])
+		}
+  for (let i = 0; i<total-str.toString().length; i++){
+  	newArr.splice(0, 0, q)
+  	}
+  return newArr.join('')
+	}
+
 
 
 
@@ -325,7 +337,41 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
+function isPalindrome(str) {
+  let newArr = [];
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== " ") {
+      newArr.push(str[i].toLowerCase());
+    }
+  }
+  let halfway;
+  let falseCount = 0;
 
+  if (newArr.length % 2 === 0) {
+    halfway = newArr.length / 2;
+    for (let i = 0; i <= halfway; i++) {
+      if (newArr[halfway + i] === newArr[halfway - i - 1]) {
+      } else {
+        falseCount += 1;
+      }
+    }
+  } else {
+    halfway = (newArr.length - 1) / 2;
+    for (let i = 0; i <= halfway; i++) {
+      if (newArr[halfway + i] === newArr[halfway - i]) {
+      } else {
+        falseCount += 1;
+      }
+    }
+  }
+
+  if (falseCount === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+  
 
 
 
